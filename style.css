@@ -611,7 +611,8 @@ cursor: pointer;
     position: absolute;
     width: 100%;
     left: 100%;
-    padding-bottom: 50px;
+    display: none;
+    padding-bottom: 250px;
   }
 
   .about-page .section-2 , .about-page .section-3{
@@ -625,11 +626,18 @@ cursor: pointer;
     flex-direction: column-reverse;
   }
 
+  .about-page .section-2 .block-2, .about-page .section-3 .block-3{
+    width: 300px;
+    height: 300px;
+    /* height: 80%; */
+  }
+
   .about-page .section-2 .text-section, .about-page .section-3 .text-section{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
   }
 
   .about-page .section-2 .text-section h1, .about-page .section-3 .text-section h1{
@@ -639,7 +647,7 @@ cursor: pointer;
   }
 
   .about-page .section-2 .text-section p, .about-page .section-3 .text-section p{
-    width: 500px;
+    width: 80%;
     text-align:justify;
     word-break: keep-all;
   }
