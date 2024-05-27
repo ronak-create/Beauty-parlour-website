@@ -30,20 +30,18 @@ body {
 .cover {
   position: absolute;
   top: 0;
-  bottom: 0;
-  right: 0;
-  /* min-height: 900px; */
   left: 0;
-  z-index: -1;
-  /* background: rgba(255, 192, 203, 0.281); */
   width: 100%;
-  min-width: 360px;
-  background: url("rendy-novantino-EUydTGTCrHo-unsplash.jpg");
+  height: 100vh;
+  background-image: url("rendy-novantino-EUydTGTCrHo-unsplash.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: 0 0 30px 2px #000;
-  /* height: 100%; */
+  z-index: -1;
+}
+
+.info-icon{
+  position: absolute;
+  display: none;
 }
 
 .cover::before {
@@ -91,7 +89,7 @@ body::before{
   height: 60px;
   transition: top 0.2s ease-in-out;
   width: 100%;
-  z-index: 20;
+  z-index: 2000;
   backdrop-filter: blur(8px);
 }
 
@@ -124,26 +122,29 @@ body::before{
   z-index: 10;
 }
 .content {
-  height: 100vh;
+  height: 90vh;
   width: 50%;
   display: flex;
-  min-width: 360px;
+  /* min-width: 360px; */
   /* min-height: 900px; */
   /* background: #000; */
   align-self: flex-start;
+  /* align-self: flex-start; */
   align-items: flex-start;
+  top: 80px;
   justify-content: center;
   flex-direction: column;
   z-index: 20;
   /* margin-top: 300px; */
+  /* background: #000; */
   /* transform: translateY(100px); */
 }
 
 .content .box-1 {
+  /* background: #000; */
   left: 0;
   margin: 30px;
   display: flex;
-  /* background: #000; */
   /* height: 100%; */
   align-items: center;
   z-index: 20;
@@ -160,15 +161,19 @@ body::before{
   /* background: transparent; */
 }
 
+#abt-button:hover{
+cursor: pointer;
+}
+
 .content .box-2 {
+  /* background: #000; */
   margin: 30px;
   text-align: center;
-  width: 50%;
+  /* width: 50%; */
 }
 
 .content .box-2 p {
   /* margin-left: 30px; */
-  transform: translateX(30px);
   font-size: 2rem;
   backdrop-filter: blur(3px);
   font-family: "autumn-flowers";
@@ -198,9 +203,9 @@ body::before{
 .about-page {
   position: absolute;
   background: #000;
-  align-self: flex-start;
+  /* align-self: flex-start; */
   width: 100%;
-  left: 100%;
+    left: 100%;
   transition: 0.5s;
   height: auto;
   display: flex;
@@ -318,9 +323,10 @@ body::before{
 .Quick-service {
   /* margin-top: 130px; */
   width: 100%;
+  height: auto;
   /* height:fit-content; */
   /* height: 100vh; */
-  min-width: 640px;
+  /* min-width: 640px; */
 }
 
 .Quick-service h1 {
@@ -546,7 +552,7 @@ body::before{
   cursor: pointer;
 }
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
   * {
     margin: 0;
     padding: 0;
@@ -555,26 +561,42 @@ body::before{
 
   body {
     width: 100%;
+    /* height: 100%; */
     height: auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
+    overflow-x: hidden;
     /* background: #000; */
   }
   .header {
     display: none;
-    position: none;
+  }
+
+  .info-icon{
+    position: absolute;
+    display: block;
+    /* width: 300px; */
+    top: 10px;
+    right: 20px;
+    z-index: 2000;
+  }
+
+  .info-icon img{
+    width: 50px;
   }
 
   .cover {
     position: absolute;
-    background-position: center;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    /* background: #000; */
-    margin: 0;
-    /* min-width: 530px; */
+    height: 100vh;
+    background-image: url("rendy-novantino-EUydTGTCrHo-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
   }
 
   .content {
@@ -583,7 +605,43 @@ body::before{
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    /* background: #f0f; */
+  }
+
+  .about-page {
+    position: absolute;
+    width: 100%;
+    left: 100%;
+    padding-bottom: 50px;
+  }
+
+  .about-page .section-2 , .about-page .section-3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-page .section-3{
+    flex-direction: column-reverse;
+  }
+
+  .about-page .section-2 .text-section, .about-page .section-3 .text-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .about-page .section-2 .text-section h1, .about-page .section-3 .text-section h1{
+    font-size: 3rem;
+    width: 500px;
+    text-align: center;
+  }
+
+  .about-page .section-2 .text-section p, .about-page .section-3 .text-section p{
+    width: 500px;
+    text-align:justify;
+    word-break: keep-all;
   }
 
   .content .box-1 {
@@ -642,6 +700,10 @@ body::before{
   .footer .footer-section .footer-logo {
     transform: translateX(70px);
     margin: 50px 100px;
+  }
+
+  .services{
+    transform: translateY(0);
   }
 
   .footer .footer-section .footer-links,
@@ -716,6 +778,7 @@ body::before{
   align-items: center;
   justify-content: center;
   /* margin-top: -100px; */
+  transform: translate(0);
   margin-bottom: 50px;
 }
 
@@ -728,7 +791,15 @@ body::before{
   /* text-align: center; */
 }
 
-.Quick-service .services h1:hover{
-    cursor: pointer;
-    background: lightgrey;
+.Quick-service .services h1:hover {
+  cursor: pointer;
+  background: lightgrey;
+}
+
+.contact-details{
+  transform: translateY(-100px);
+}
+
+.services{
+  transform: translateY(1400px);
 }
